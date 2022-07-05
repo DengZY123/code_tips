@@ -1,0 +1,7 @@
+
+
+alter table t_bs_apollo_config 
+	add column our_publish_state tinyint  DEFAULT 0 COMMENT '内灰发布状态，0-未发布，1-已发布' after publish_state,
+	add column gray_publish_state tinyint  DEFAULT 0 COMMENT '外灰发布状态，0-未发布，1-已发布' after our_publish_state,
+	add column bug_publish_state tinyint  DEFAULT 0 COMMENT '准现网发布状态，0-未发布，1-已发布' after gray_publish_state,
+	add column config_state tinyint  DEFAULT 0 COMMENT '配置状态：0-未填充，1-已填充，2-待选择' after bug_publish_state;
